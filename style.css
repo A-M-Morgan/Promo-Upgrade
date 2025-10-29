@@ -1,0 +1,80 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+header {
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+.logo {
+    height: 40px;
+    margin-right: 15px;
+}
+header h1 {
+    font-size: 18px;
+    color: #333;
+}
+.input-row {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    background: #fff;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.input-row input, .input-row select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-row button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+}
+.input-row .reset {
+    background: #dc3545;
+}
+.result-box {
+    margin: 20px auto;
+    width: 300px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+.label {
+    background: #000;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+}
+.value {
+    font-size: 24px;
+    margin: 10px 0;
+    font-weight: bold;
+}
+.note {
+    font-size: 14px;
+    color: #555;
+}
+footer {
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    border-top: 1px solid #ccc;
+}
