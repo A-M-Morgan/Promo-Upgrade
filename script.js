@@ -22,8 +22,8 @@ async function checkUpgrade() {
             res.style.color = "blue";
         } else if (upgrade === "Economy to Premium Economy") {
             res.style.color = "purple";
-        } else {
-            res.style.color = "green";
+        } else if (upgrade === "Premium Economy to Business") {
+            res.style.color = "blue";
         }
     } else {
         res.textContent = "Not Available";
