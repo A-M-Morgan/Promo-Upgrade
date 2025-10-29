@@ -1,56 +1,55 @@
-document.getElementById("from").addEventListener("input", enableUpgradeDropdown);
-document.getElementById("to").addEventListener("input", enableUpgradeDropdown);
-
-function enableUpgradeDropdown() {
-  const from = document.getElementById("from").value.trim();
-  const to = document.getElementById("to").value.trim();
-  const upgrade = document.getElementById("upgrade");
-
-  if (from && to) {
-    upgrade.disabled = false;
-  } else {
-    upgrade.disabled = true;
-    upgrade.selectedIndex = 0;
-  }
-}
 
 async function checkUpgrade() {
-  const from = document.getElementById("from").value.trim().toUpperCase();
-  const to = document.getElementById("to").value.trim().toUpperCase();
-  const upgrade = document.getElementById("upgrade").value;
-  const res = document.getElementById("result");
-  const note = document.getElementById("note");
+    const from = document.getElementById("from").value.trim().toUpperCase();
+    const to = document.getElementById("to").value.trim().toUpperCase();
+    const upgrade = document.getElementById("upgrade").value;
 
-  const response = await fetch("rcc.json");
-  const data = await response.json();
+    const res = document.getElementById("result");
+    const note = document.getElementById("note");
 
-  const match = data.find(row => row.From?.toUpperCase() === from && row.To?.toUpperCase() === to);
+    const response = await fetch("rcc.json");
+    const data = await response.json();
 
-  if (match && match[upgrade] && match[upgrade] !== "-") {
-    res.textContent = match[upgrade];
-    note.textContent = match.Notes || "";
+    const match = data.find(row => row.From?.toUpperCase() === from && row.To?.toUpperCase() === to);
 
-    if (upgrade === "Business to First") {
-      res.style.color = "red";
-    } else if (upgrade === "Economy to Business") {
-      res.style.color = "blue";
-    } else if (upgrade === "Economy to Premium Economy") {
-      res.style.color = "purple";
+    if (match && match[upgrade] && match[upgrade] !== "-") {
+        res.textContent = match[upgrade];
+        note.textContent = match.Notes || "";
+
+        if (upgrade === "Business to First") {
+            res.style.color = "red";
+        } else if (upgrade === "Economy to Business") {
+            res.style.color = "blue";
+        } else if (upgrade === "Economy to Premium Economy") {
+            res.style.color = "purple";
+        } else if (upgrade === "Premium Economy to Business") {
+            res.style.color = "blue";
+        }
     } else {
-      res.style.color = "green";
+        res.textContent = "Not Available";
+        res.style.color = "gray";
+        note.textContent = "";
     }
-  } else {
-    res.textContent = "Not Available";
-    res.style.color = "gray";
-    note.textContent = "";
-  }
 }
 
 function resetForm() {
-  document.getElementById("from").value = "";
-  document.getElementById("to").value = "";
-  document.getElementById("upgrade").selectedIndex = 0;
-  document.getElementById("upgrade").disabled = true;
-  document.getElementById("result").textContent = "";
-  document.getElementById("note").textContent = "";
+    document.getElementById("from").value = "";
+    document.getElementById("to").value = "";
+    document.getElementById("upgrade").selectedIndex = 0;
+    document.getElementById("result").textContent = "";
+    document.getElementById("note").textContent = "";
 }
+
+
+function checkUpgradeVisibility() {
+    const from = document.getElementById("fromLocation").value;
+    const to = document.getElementById("toLocation").value;
+    const upgradeType = document.getElementById("upgradeType");
+    if (from && to) {
+        upgradeType.classList.remove("hidden");
+    } else {
+        upgradeType.classList.add("hidden");
+    }
+}
+document.getElementById("fromLocation").addEventListener("change", checkUpgradeVisibility);
+document.getElementById("toLocation").addEventListener("change", checkUpgradeVisibility);
