@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo Upgrade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Promo Upgrade Calculator</h1>
+    <table>
+      <tr>
+        <td><label for="from">From:</label></td>
+        <td><input type="text" id="from"></td>
+      </tr>
+      <tr>
+        <td><label for="to">To:</label></td>
+        <td><input type="text" id="to"></td>
+      </tr>
+      <tr>
+        <td><label for="upgradeType">Upgrade Type:</label></td>
+        <td>
+          <select id="upgradeType">
+            <option value="Economy to Premium Economy">Economy to Premium Economy</option>
+            <option value="Premium Economy to Business">Premium Economy to Business</option>
+            <option value="Economy to Business">Economy to Business</option>
+            <option value="Business to First">Business to First</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+    <button onclick="checkUpgrade()">Check Upgrade Value</button>
+    <div id="result" class="result"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
