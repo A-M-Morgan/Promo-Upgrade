@@ -82,12 +82,12 @@ button {
 }
 .note {
   position: relative;
-  float: center;
+  justify-content: center;
   margin-top: 50px;
   background-color: #eee;
   padding: 10px;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
     }
 footer {
     display: flex;
@@ -95,7 +95,7 @@ footer {
     align-items: center;    /* Center text */
     padding: 20px;
     background-color: #f0f0f0;
-    font-size: 16px; /* Increase size */
+    font-size: 16px;
 }
 
 .footer-note {
@@ -109,8 +109,9 @@ footer {
 }
 .date {
   position: relative;
+  justify-content: right;
   float: right;
   margin-top: 50px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
