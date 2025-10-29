@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Upgrade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="emirates-logo.png" alt="Emirates Logo" class="logo">
+        <h1>Promotional Sector Upgrade Rates For Contact Centres</h1>
+    </header>
+    <main>
+        <div class="input-row">
+            <div class="input-group">
+                <label for="from">From</label>
+                <input type="text" id="from">
+            </div>
+            <div class="input-group">
+                <label for="to">To</label>
+                <input type="text" id="to">
+            </div>
+            <div class="input-group">
+                <label for="upgrade">Upgrade Type</label>
+                <select id="upgrade">
+                    <option>Economy to Premium Economy</option>
+                    <option>Premium Economy to Business</option>
+                    <option>Economy to Business</option>
+                    <option>Business to First</option>
+                </select>
+            </div>
+            <button onclick="checkUpgrade()">Check</button>
+            <button onclick="resetForm()">Reset</button>
+        </div>
+        <div class="result">
+            <div class="label">Upgrade Value</div>
+            <div id="value"></div>
+        </div>
+        <div id="note" class="note"></div>
+    </main>
+    <footer>
+        <strong>Note:</strong> Revised Rates: 23 Oct. 2025
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
